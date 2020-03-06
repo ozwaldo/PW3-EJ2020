@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  /*  10px / 16px = 0.625 * 100 = 62.5%  */
+  font-size: 62.5%; }
+
+p {
+  font-size: 1.6rem; }
+
+#p1 {
+  font-size: 3.2rem; }
+
+.fila {
+  max-width: 90rem;
+  margin: 0 auto;
+  border: 1px solid black; }
+  .fila::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+[class^="col-"] {
+  float: left;
+  border: 0.1rem solid #2e2e2e;
+  background-color: #2e85d1cc;
+  color: whitesmoke; }
+  [class^="col-"]:not(:last-child) {
+    margin-right: 3rem; }
+
+.col-1-de-2 {
+  width: calc((100% - 3rem) /2); }
+
+.col-1-de-3 {
+  width: calc((100% - 2 * 3rem)/3); }

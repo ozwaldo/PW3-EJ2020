@@ -1,0 +1,50 @@
+$ancho-grid: 90rem;
+$espacio-cols: 3rem;
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;   
+}
+html {
+    /*  10px / 16px = 0.625 * 100 = 62.5%  */
+    font-size: 62.5%;
+}
+p {
+    font-size: 1.6rem;
+}
+#p1 {
+    font-size: 3.2rem;
+}
+
+.fila {
+    max-width: $ancho-grid;
+    margin: 0 auto;    
+
+    border: 1px solid black;
+
+    @include clearfix;
+}
+[class^="col-"]{
+    float: left;
+    border: 0.1rem solid #2e2e2e;
+    background-color: #2e85d1cc;
+    color: whitesmoke;
+    &:not(:last-child) {
+        margin-right: $espacio-cols;
+    }
+}
+.col-1-de-2 {
+    width: calc((100% - #{$espacio-cols}) /2);    
+}
+.col-1-de-3 {
+    width: calc((100% - 2 * #{$espacio-cols})/3);
+}
