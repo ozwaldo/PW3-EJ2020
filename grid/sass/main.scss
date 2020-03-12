@@ -54,6 +54,41 @@ html {
     /*  10px / 16px = 0.625 * 100 = 62.5%  */
     font-size: 62.5%;
 }
+body {
+    background-color: purple;
+
+    @include respond(escritorio) {
+        background-color: yellow;
+        font-size: 5rem;
+    }
+    @include respond(tab-land) {
+        background-color: violet;
+    }
+    @include respond(tab-port) {
+        background-color: springgreen;
+    }
+   
+    @include respond(telefono) {
+        background-color: salmon;
+    }
+}
+// @media only screen and (max-width: 1200px) {
+//     body {
+//         background-color: yellow;
+//     }
+// }
+
+// @media only screen and (max-width: 900px) {
+//     body {
+//         background-color: springgreen;
+//     }
+// }
+/* @media only screen and (max-width: 600px) {
+    body {
+        background-color: salmon;
+    }
+} */
+
 p {
     font-size: 1.6rem;
 }
@@ -70,12 +105,14 @@ p {
 
     @include clearfix;
 
-    @include respond(tab-port) {
-        max-width: 70rem;
-    }
+    
 
     @include respond(telefono) {
         max-width: 50rem;
+    }
+
+    @include respond(tab-port) {
+        max-width: 70rem;
     }
 }
 [class^="col-"]{
@@ -93,17 +130,19 @@ p {
         @include respond(telefono) {
             margin-bottom: 1rem;
         }
+       
     }
 
     @include respond(telefono) {
         width: 100% !important;       
     }
+
+    
 }
 .col-1-de-2 {
-    width: calc((100% - #{$espacio-cols}) /2);    
+    width: calc((100% - #{$espacio-cols}) /2);
 }
-.col-1-de-3 {
-   
+.col-1-de-3 {    
     width: calc((100% - 2 * #{$espacio-cols})/3);
 }
 .col-2-de-3 {
